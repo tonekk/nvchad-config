@@ -26,6 +26,8 @@ M.mappings = {
       ["<C-l>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateRight() <CR>", " window right" },
       ["<C-j>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateDown() <CR>", " window down" },
       ["<C-k>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateUp() <CR>", " window up" },
+
+      ["<C-q>"] = { ":qall <CR>", "  Exit" },
     },
   },
   neogit = {
