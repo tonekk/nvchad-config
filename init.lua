@@ -1,3 +1,5 @@
--- example file i.e lua/custom/init.lua
--- load your options globals, autocmds here or anything .__.
--- you can even override default options here (core/options.lua)
+-- For some reason those don't work in chadrc Mappings
+vim.keymap.set("n", "s", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })
+vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
+vim.keymap.set("n", "S", "<cmd>lua require('substitute').eol()<cr>", { noremap = true })
+vim.keymap.set("x", "s", "<cmd>lua require('substitute').visual()<cr>", { noremap = true })
