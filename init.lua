@@ -4,4 +4,5 @@ vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>", { noremap
 vim.keymap.set("n", "S", "<cmd>lua require('substitute').eol()<cr>", { noremap = true })
 vim.keymap.set("x", "s", "<cmd>lua require('substitute').visual()<cr>", { noremap = true })
 
-vim.opt.clipboard = ""
+vim.keymap.set("n", "x", '"_dl', { noremap = true })
+vim.keymap.set("x", "x", '"_dl', { noremap = true })

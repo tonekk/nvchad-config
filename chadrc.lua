@@ -13,6 +13,7 @@ M.mappings = {
   disabled = {
     n = {
       ["<leader>n"] = "",
+      ["<A-h>"] = "",
     }
   },
 
@@ -27,9 +28,20 @@ M.mappings = {
       ["<C-j>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateDown() <CR>", " window down" },
       ["<C-k>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateUp() <CR>", " window up" },
 
-      ["<C-q>"] = { ":qall <CR>", "  Exit" },
+      ["<C-q>"] = { ":qall! <CR>", "  Exit" },
     },
   },
+
+  testing = {
+    n = {
+      ["<leader>rf"] = { ':let @+ = "bundle exec rspec " . expand("%") <CR>', 'ﭧ copy test file with rspec cmd' },
+      ["<leader>rn"] = { ':let @+ = "bundle exec rspec " . expand("%") . ":" . line(".") <CR>', 'ﭧ copy nearest test for rspec' },
+
+      ["<leader>tf"] = { ':let @+ = expand("%") <CR>', 'ﭧ copy test file' },
+      ["<leader>tn"] = { ':let @+ = expand("%") . ":" . line(".") <CR>', 'ﭧ copy nearest test [file:line]' },
+    },
+  },
+
   neogit = {
     n = {
       ["<C-g>"] = { "<cmd>:G <CR>", "  open fugitive" },
