@@ -6,7 +6,7 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-  theme = "tomorrow_night",
+  theme = "tokyonight",
 }
 
 M.mappings = {
@@ -19,12 +19,18 @@ M.mappings = {
   general = {
     n = {
       ["<leader>nu"] = { "<cmd> set nu! <CR>", "   toggle line number" },
-      ["<leader>nc"] = { "<cmd> :e ~/etc/nvim/lua/custom/chadrc.lua<CR>", "   edit nvim conf" },
+      ["<leader>co"] = { "<cmd> :e ~/etc/nvim/lua/custom/chadrc.lua<CR>", "   edit nvim conf" },
+
+      -- switch between windows
+      ["<C-h>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateLeft() <CR>", " window left" },
+      ["<C-l>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateRight() <CR>", " window right" },
+      ["<C-j>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateDown() <CR>", " window down" },
+      ["<C-k>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateUp() <CR>", " window up" },
     },
   },
   neogit = {
     n = {
-      ["<C-g>"] = { "<cmd>lua require('neogit').open({ kind = 'split' })<CR>", "  open neogit" },
+      ["<C-g>"] = { "<cmd>:G <CR>", "  open fugitive" },
     }
   },
   nvim_tree = {
@@ -51,12 +57,13 @@ M.mappings = {
 
 M.plugins = {
   user = {
-    ["TimUntersberger/neogit"] = {},
     ["kylechui/nvim-surround"] = {
       require("nvim-surround").setup {}
     },
     ["gbprod/substitute.nvim"] = {},
-    ["tpope/vim-rails"] = {}
+    ["tpope/vim-rails"] = {},
+    ["tpope/vim-fugitive"] = {},
+    ["alexghergh/nvim-tmux-navigation"] = {},
   },
   override = {
     ["nvim-treesitter/nvim-treesitter"] = {
