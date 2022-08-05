@@ -19,6 +19,7 @@ M.mappings = {
   general = {
     n = {
       ["<leader>nu"] = { "<cmd> set nu! <CR>", "   toggle line number" },
+      ["<leader>nc"] = { "<cmd> :e ~/etc/nvim/lua/custom/chadrc.lua<CR>", "   edit nvim conf" },
     },
   },
   neogit = {
@@ -36,16 +37,16 @@ M.mappings = {
       ["<leader><leader>"] = { "<cmd> Telescope find_files <CR>", "  find files" },
     },
   },
---  substitute = {
---    n = {
---      ["s"] = { "<cmd>lua require('substitute').operator()<cr>", "   substitute the text object", },
---      ["ss"] = { "<cmd>lua require('substitute').line()<cr>", "   substitute the current line"  },
---      ["S"] = { "<cmd>lua require('substitute').eol()<cr>", "   substitute until eol" },
---    },
---   v = {
---     ["s"] = { "<cmd>lua require('substitute').visual()<cr>",  },
---    }
---  }
+  substitute = {
+    n = {
+      ["s"] = { "<cmd>lua require('substitute').operator()<cr>", "   substitute the text object", },
+      ["ss"] = { "<cmd>lua require('substitute').line()<cr>", "   substitute the current line"  },
+      ["S"] = { "<cmd>lua require('substitute').eol()<cr>", "   substitute until eol" },
+    },
+    v = {
+      ["s"] = { "<cmd>lua require('substitute').visual()<cr>",  },
+    }
+  }
 }
 
 M.plugins = {
@@ -54,7 +55,8 @@ M.plugins = {
     ["kylechui/nvim-surround"] = {
       require("nvim-surround").setup {}
     },
-    ["gbprod/substitute.nvim"] = {}
+    ["gbprod/substitute.nvim"] = {},
+    ["tpope/vim-rails"] = {}
   },
   override = {
     ["nvim-treesitter/nvim-treesitter"] = {
