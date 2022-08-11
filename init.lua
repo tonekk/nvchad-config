@@ -6,3 +6,5 @@ vim.keymap.set("x", "s", "<cmd>lua require('substitute').visual()<cr>", { norema
 
 vim.keymap.set("n", "x", '"_dl', { noremap = true })
 vim.keymap.set("x", "x", '"_dl', { noremap = true })
+
+vim.o.guifont = "Hack Nerd Font"

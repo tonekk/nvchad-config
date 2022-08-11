@@ -9,76 +9,11 @@ M.ui = {
   theme = "tokyonight",
 }
 
-M.mappings = {
-  disabled = {
-    n = {
-      ["<leader>n"] = "",
-      ["<A-h>"] = "",
-    }
-  },
-
-  general = {
-    n = {
-      ["<leader>nu"] = { "<cmd> set nu! <CR>", "   toggle line number" },
-      ["<leader>co"] = { "<cmd> :e ~/etc/nvim/lua/custom/chadrc.lua<CR>", "   edit nvim conf" },
-
-      -- switch between windows
-      ["<C-h>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateLeft() <CR>", " window left" },
-      ["<C-l>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateRight() <CR>", " window right" },
-      ["<C-j>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateDown() <CR>", " window down" },
-      ["<C-k>"] = { ":lua require'nvim-tmux-navigation'.NvimTmuxNavigateUp() <CR>", " window up" },
-
-      ["<C-q>"] = { ":qall! <CR>", "  Exit" },
-    },
-  },
-
-  testing = {
-    n = {
-      ["<leader>rf"] = { ':let @+ = "bundle exec rspec " . expand("%") <CR>', 'ﭧ copy test file with rspec cmd' },
-      ["<leader>rn"] = { ':let @+ = "bundle exec rspec " . expand("%") . ":" . line(".") <CR>', 'ﭧ copy nearest test for rspec' },
-
-      ["<leader>tf"] = { ':let @+ = expand("%") <CR>', 'ﭧ copy test file' },
-      ["<leader>tn"] = { ':let @+ = expand("%") . ":" . line(".") <CR>', 'ﭧ copy nearest test [file:line]' },
-    },
-  },
-
-  neogit = {
-    n = {
-      ["<C-g>"] = { "<cmd>:G <CR>", "  open fugitive" },
-    }
-  },
-  nvim_tree = {
-    n = {
-      ["<leader>up"] = { "<cmd> lua require('nvim-tree.api').tree.change_root_to_parent() <CR>", "   open encloding folder in nvimtree" },
-    }
-  },
-  telescope = {
-    n = {
-      ["<leader><leader>"] = { "<cmd> Telescope find_files <CR>", "  find files" },
-    },
-  },
-  substitute = {
-    n = {
-      ["s"] = { "<cmd>lua require('substitute').operator()<cr>", "   substitute the text object", },
-      ["ss"] = { "<cmd>lua require('substitute').line()<cr>", "   substitute the current line"  },
-      ["S"] = { "<cmd>lua require('substitute').eol()<cr>", "   substitute until eol" },
-    },
-    v = {
-      ["s"] = { "<cmd>lua require('substitute').visual()<cr>",  },
-    }
-  }
-}
+M.mappings = require("custom.mappings")
 
 M.plugins = {
-  user = {
-    ["kylechui/nvim-surround"] = {
-      require("nvim-surround").setup {}
-    },
-    ["gbprod/substitute.nvim"] = {},
-    ["tpope/vim-rails"] = {},
-    ["tpope/vim-fugitive"] = {},
-    ["alexghergh/nvim-tmux-navigation"] = {},
-  },
+  user = require "custom.plugins",
+
   override = {
     ["nvim-treesitter/nvim-treesitter"] = {
       ensure_installed = {
@@ -88,7 +23,26 @@ M.plugins = {
         "javascript",
         "typescript",
       },
-    }
+    },
+    ["williamboman/mason.nvim"] = {
+      ensure_installed = {
+        -- lua stuff
+        "lua-language-server",
+        "stylua",
+
+        -- web dev
+        "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
+        "deno",
+        "emmet-ls",
+        "json-lsp",
+
+        -- shell
+        "shfmt",
+        "shellcheck",
+      },
+    },
   },
   remove = {
     "windwp/nvim-autopairs",
