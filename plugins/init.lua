@@ -24,5 +24,8 @@ return {
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
     end,
-  }
+  },
+  ["nvim-telescope/telescope-fzf-native.nvim"] = {
+    run = "make"
+  },
 }

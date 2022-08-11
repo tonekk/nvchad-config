@@ -35,4 +35,10 @@ M.mason = {
   },
 }
 
+M.telescope = {
+  extensions_list = {
+    "fzf"
+  }
+}
+
 return M

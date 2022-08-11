@@ -44,7 +44,7 @@ M.nvim_tree = {
 }
 M.telescope = {
   n = {
-    ["<leader><leader>"] = { "<cmd> Telescope find_files <CR>", "  find files" },
+    ["<leader><leader>"] = { "<cmd> Telescope git_files <CR>", "  git files" },
   },
 }
 M.substitute = {
