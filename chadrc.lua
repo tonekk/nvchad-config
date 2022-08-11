@@ -12,6 +12,7 @@ M.plugins = {
     ["nvim-treesitter/nvim-treesitter"] = plugin_overrides.treesitter,
     ["williamboman/mason.nvim"] = plugin_overrides.mason,
     ["nvim-telescope/telescope.nvim"] = plugin_overrides.telescope,
+    ["lukas-reineke/indent-blankline.nvim"] = plugin_overrides.blankline,
   },
   remove = { "windwp/nvim-autopairs" },
 }
