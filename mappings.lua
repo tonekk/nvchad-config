@@ -4,6 +4,7 @@ M.disabled = {
   n = {
     ["<leader>n"] = "",
     ["<A-h>"] = "",
+    ["<leader>e"] = "",
   }
 }
 
@@ -29,6 +30,8 @@ M.testing = {
 
     ["<leader>tf"] = { ':let @+ = expand("%") <CR>', 'ﭧ copy test file' },
     ["<leader>tn"] = { ':let @+ = expand("%") . ":" . line(".") <CR>', 'ﭧ copy nearest test [file:line]' },
+
+    ["<leader>e"] = { ':!ruby % <CR>', '  execute current file with ruby' },
   },
 }
 

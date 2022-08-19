@@ -1,6 +1,6 @@
 local M = {}
 
-M.ui = { theme = "tokyonight" }
+M.ui = { theme = "tomorrow_night" }
 
 M.mappings = require("custom.mappings")
 
