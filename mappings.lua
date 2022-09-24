@@ -61,4 +61,31 @@ M.substitute = {
   }
 }
 
+local function showFugitiveGit()
+  if vim.fn.FugitiveHead() ~= '' then
+    vim.cmd [[
+    Git
+    " wincmd H  " Open Git window in vertical split
+    " setlocal winfixwidth
+    " vertical resize 31
+    " setlocal winfixwidth
+    setlocal nonumber
+    setlocal norelativenumber
+    ]]
+  end
+end
+function ToggleFugitiveGit()
+  if vim.fn.buflisted(vim.fn.bufname('fugitive:///*/.git//$')) ~= 0 then
+    vim.cmd[[ execute ":bdelete" bufname('fugitive:///*/.git//$') ]]
+  else
+    showFugitiveGit()
+  end
+end
+
+M.fugitive = {
+  n = {
+    ["<leader>gg"] = { "<cmd>lua ToggleFugitiveGit()<cr>", "  toggle fugitive" },
+  },
+}
+
 return M;
