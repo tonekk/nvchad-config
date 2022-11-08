@@ -35,9 +35,14 @@ M.testing = {
   },
 }
 
-M.neogit = {
+M.fugitive = {
   n = {
     ["<C-g>"] = { "<cmd>:G <CR>", "  open fugitive" },
+  }
+}
+M.git_blame = {
+  n = {
+    ["<leader>go"] = { "<cmd>:GitBlameOpenCommitURL <CR>", "  open commit url" },
   }
 }
 M.nvim_tree = {

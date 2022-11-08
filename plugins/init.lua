@@ -5,6 +5,7 @@ return {
   ["gbprod/substitute.nvim"] = {},
   ["tpope/vim-rails"] = {},
   ["tpope/vim-fugitive"] = {},
+  ["f-person/git-blame.nvim"] = {},
   ["alexghergh/nvim-tmux-navigation"] = {},
   ["folke/trouble.nvim"] = {
     requires = "kyazdani42/nvim-web-devicons",
