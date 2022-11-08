@@ -88,4 +88,4 @@ M.fugitive = {
   },
 }
 
-return M;
+return M
