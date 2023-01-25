@@ -35,6 +35,33 @@ M.testing = {
   },
 }
 
+M.tabufline = {
+  n = {
+    -- cycle through buffers
+    ["<Right>"] = {
+      function()
+        require("core.utils").tabuflineNext()
+      end,
+      "  goto next buffer",
+    },
+
+    ["<Left>"] = {
+      function()
+        require("core.utils").tabuflinePrev()
+      end,
+      "  goto prev buffer",
+    },
+
+    -- close buffer + hide terminal buffer
+    ["<C-x>"] = {
+      function()
+        require("core.utils").close_buffer()
+      end,
+      "   close buffer",
+    },
+  },
+}
+
 M.fugitive = {
   n = {
     ["<C-g>"] = { "<cmd>:G <CR>", "  open fugitive" },
