@@ -22,6 +22,10 @@ local sources = {
   -- Ruby
   b.diagnostics.rubocop,
   b.formatting.rubocop,
+
+  -- Elixir
+  b.diagnostics.credo,
+  b.formatting.credo,
 }
 
 null_ls.setup {

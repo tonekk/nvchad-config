@@ -31,7 +31,8 @@ M.testing = {
     ["<leader>tf"] = { ':let @+ = expand("%") <CR>', 'ﭧ copy test file' },
     ["<leader>tn"] = { ':let @+ = expand("%") . ":" . line(".") <CR>', 'ﭧ copy nearest test [file:line]' },
 
-    ["<leader>e"] = { ':!ruby % <CR>', '  execute current file with ruby' },
+    ["<leader>re"] = { ':!ruby % <CR>', '  execute current file with ruby' },
+    ["<leader>ee"] = { ':!elixir % <CR>', '💧 execute current file with elixir' },
   },
 }
 

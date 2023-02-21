@@ -10,3 +10,10 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.elixirls.setup{
+  -- Unix
+  cmd = { "/Users/finnheemeyer/etc/nvim/mason/packages/elixir-ls/language_server.sh" };
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
