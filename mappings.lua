@@ -52,14 +52,6 @@ M.tabufline = {
       end,
       "  goto prev buffer",
     },
-
-    -- close buffer + hide terminal buffer
-    ["<C-x>"] = {
-      function()
-        require("core.utils").close_buffer()
-      end,
-      "   close buffer",
-    },
   },
 }
 

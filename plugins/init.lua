@@ -35,10 +35,4 @@ return {
   },
   ["elixir-editors/vim-elixir"] = {
   },
-  -- ["mhanberg/elixir.nvim"] = {
-  --   config = function()
-  --     require("elixir").setup {
-  --     }
-  --   end,
-  -- },
 }
